@@ -1,6 +1,7 @@
 var aleatorio = getRandom();
 var score = 0;
 var numeros = [];
+var pessoa = [];
 
 function telaInicio() {
     document.getElementById('telaRanking').style.display = 'none';
@@ -32,18 +33,11 @@ function getRandom(){
     return aleatorio;
 }
 
-function setRandom(){
+function printRandom(){
     for(i=0; i<numeros.length; i++){
         document.getElementById('numRandom').innerHTML = numeros[i];
     }
-}
-
-function printRandom(){
-    document.getElementById('numRandom').innerHTML = aleatorio;
-}
-
-function getScore(){
-    return score;
+    //document.getElementById('numRandom').innerHTML = aleatorio;
 }
 
 function setScore(){
@@ -54,16 +48,24 @@ function printScore(){
     document.getElementById('numScore').innerHTML = score;
 }
 
-function genius(numero){
-    if(numero!=aleatorio){
-        telaFim();
+function entrada(numero){
+    pessoa.push(numero);
+
+    if(pessoa.length==numeros.length){
+        genius();
     }
-    else{
-        getRandom();
-        printRandom();
-        setScore();
-        numeros.push(aleatorio);
+}
+
+function genius(){
+    for(i=0; i<numeros.length; i++){
+        if(pessoa[i]!=numeros[i]){
+            telaFim();
+        }
     }
 
-        console.log("array "+numeros);
+    getRandom();
+    numeros.push(aleatorio);
+    printRandom();
+    setScore();
+    pessoa = [];
 }
