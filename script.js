@@ -16,9 +16,39 @@ function telaJogo() {
     printRandom();
 }
 
+function salvaRanking(){
+    var nome = document.getElementById('nome').value;
+
+    var url = "https://us-central1-prova-front-letras.cloudfunctions.net/save"
+    var postRanking = new XMLHttpRequest();
+    const params = new URLSearchParams({
+        name: nome,
+        score: score,
+    });
+
+    postRanking.open("POST", url, true);
+    postRanking.send(params);
+    postRanking.onreadystatechange = function() {
+        if (postRanking.readyState == 4 && postRanking.status == 200) {
+            var data = postRanking.responseText;
+            console.log(data);
+        }
+    }
+
+    telaRanking();
+}
+
 function telaRanking() {
+    var url = "https://us-central1-prova-front-letras.cloudfunctions.net/ranking"
+    var getRanking = new XMLHttpRequest();
+
     document.getElementById('telaInicio').style.display = 'none';
+    document.getElementById('telaFim').style.display = 'none';
     document.getElementById('telaRanking').style.display = 'flex';
+    
+    getRanking.open("GET", url, false);
+    getRanking.send();
+    document.getElementById("resposta").innerHTML = getRanking.responseText;
 }
 
 function telaFim() {
