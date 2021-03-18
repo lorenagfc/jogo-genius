@@ -1,0 +1,101 @@
+<html>
+
+    <head>
+
+        <title>G3n1u5</title>
+
+        <link rel="stylesheet" href="./style.css">
+
+    </head>
+
+    <body>
+
+        <div class="container">
+            
+            <div id="telaInicio" class="tela">
+
+                <div id="ranking">
+                    <a onclick="telaRanking()" class="ranking"><img src="./img/ranking.png"/></a>
+                </div>
+
+                <div id="conteudo1">
+                    <div>
+                        <img src="./img/logo.png"/>
+                    </div>
+                    <div>
+                        <input type="button" value="Iniciar Jogo" class="button" onclick="telaJogo()">
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="telaJogo" class="tela">
+                <div class="random">
+                    <p id="numRandom"></p>
+                </div>
+
+                <div class="teclado">
+                    <table  class="teclas">
+                        <tr>
+                            <td onclick="genius(1)">1</td>
+                            <td onclick="genius(2)">2</td>
+                            <td onclick="genius(3)">3</td>
+                        </tr>
+                        <tr>
+                            <td onclick="genius(4)">4</td>
+                            <td onclick="genius(5)">5</td>
+                            <td onclick="genius(6)">6</td>
+                        </tr>
+                        <tr>
+                            <td onclick="genius(7)">7</td>
+                            <td onclick="genius(8)">8</td>
+                            <td onclick="genius(9)">9</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div id="telaFim" class="tela">
+                <div>
+                    <p>Fim do Jogo</p>
+                </div>
+
+                <div>
+                    <span>Score</span>
+                    <p id="numScore"></p>
+                </div>
+
+                <div>
+                    <input type="text" value="Digite seu nome" class="txt">
+                </div>
+
+                <div>
+                    <input type="button" value="Salvar Ranking" class="button" onclick="telaJogo()">
+                </div>
+            </div>
+
+            <div id="telaRanking" class="tela">
+                <div class="nav">
+                    <div>
+                        <a onclick="telaInicio()"><img src="./img/voltar.png"/></a>
+                    </div>
+                    <div>
+                        <p>Ranking</p>
+                    </div>
+                </div>
+
+                <div>
+                    skslhhiso
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+
+    <script src="./script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</html>
